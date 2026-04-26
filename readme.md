@@ -32,3 +32,15 @@ I've run through many iterations of this code. Honestly, I couldn't have done it
 
 ## Feedback
 I'd love to know if I did well! Honestly this was my first time working with supabase. I had an account setup before, but I never played with it this much. It's eye opening and the free tier gives me a lot of leeway and a lot of ideas. Makes me think that I can make my own web app without paying much.
+
+## Hours it took to complete
+This entire project (minus the documentation diving and some reading) Took about 6-8 hours to complete combined. So, roughly about a single day of work.
+
+## What is this and why?
+Again, this is a simple script/test to see if the database works. Because we are targeting simplicity and are not trying complicate things, we went with the barest of bones when building this. Meaning no type-safety, no GUI, and definitely no user interaction other than the commands.
+
+The database was built using minimal RLS policies to allow RBAC (Role-Based Access Control). Users were stored inside the `public.auth` table built-in to postgres, but their roles and permissions were stored in another table (following supabase documentation recommendation). This was done to ensure that:
+
+1. We wouldn't need to fiddle with the payload being sent back to the server when accessing the data API;
+
+2. We'd have security fully handled by the backend via RLS policies and RBAC.
